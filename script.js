@@ -493,8 +493,165 @@ const angka = [3, 4, 6, 7, -3, 4, 3, 2, 3, 10];
 // kalikan 3
 // jumlahkan
 
-const hasil = angka.filter(a => a > 5).
-                map(a => a * 3).
-                reduce((acc, curr) => acc + curr);
+// const hasil = angka.filter(a => a > 5).
+//                 map(a => a * 3).
+//                 reduce((acc, curr) => acc + curr);
 
-console.log(hasil);
+// console.log(hasil);
+
+
+// == TEMPLATE LITERAL ==
+// Multi lane String
+// console.log(`joko
+//     anwar`);
+
+// const nama = "Dzaky";
+// const umur = 20;
+
+// console.log(`Halo, nama saya ${nama}, Umur saya ${umur} Tahun`)
+
+// // Embeded Expression 
+// console.log(`${1 + 1}`);
+// console.log(`${alert("anjay")}`);
+// const z = 11;
+// console.log(`${(z % 2 == 0) ? 'genap' : 'ganjil' }`)
+
+// HTML Fragment
+// const mhs = [{
+//     nama: 'Joko',
+//     email: 'joko@gmail.com'
+//     },
+//     {
+//         nama: 'Dzaky',
+//         email: 'dzaky@gmail.com'
+//     },
+//     {
+//         nama: 'Jeki',
+//         email: 'jeki@gmail.com'
+//     }
+// ]
+
+// const el = `<div class="mhs">
+//     ${mhs.map(m => `<ul>
+//             <li>${m.nama}</li>
+//             <li>${m.email}</li>
+//         </ul>`).join('')}
+// </div>`
+
+// 3. Conditioning
+// ternary 
+// const lagu = {
+//     judul : 'kau adalah jawa ku',
+//     penyanyi : 'ahmad syahroni',
+// }
+
+// const el = `<div class = "lagu">
+//     <ul>
+//         <li>${lagu.penyanyi}</li>
+//         <li>${lagu.judul} ${(lagu.feat ? `(feat. ${lagu.feat})` : ``)}</li>
+//     </ul>
+// </div>`
+
+
+//4. nested
+// const mhs = {
+//     nama: 'Dzaky rama',
+//     semester: 4,
+//     matakuliah: ['Rekayasa web', 'analisis sistem perancangan', 'pemrograman berbasis object', 'pancasila']
+// }
+
+// function cetakMatakuliah(matkul) {
+//     return `
+//     <ol>
+//         ${matkul.map(mk => `<li>${mk}</li>`).join('')}
+//     </ol>`
+// }
+
+// const el = `<div class="mhs">
+//     <h2>${mhs.nama}</h2>
+//     <span class="semester"> Semester : ${mhs.semester}</span>
+//     <h4>Mata Kuliah :</h4>
+//     ${cetakMatakuliah(mhs.matakuliah)}
+// </div>`
+
+// document.body.innerHTML = el;
+
+// == TAGGED TEMPLATE ==
+// const nama = 'Dzaky Ramadhani';
+// const umur = 20;
+
+// const str = coba`Halo, nama saya ${nama}, umur saya ${umur} tahun`;
+
+// console.log(str);
+
+// function coba(strings, ...values) {
+//     // let result = '';
+//     // strings.forEach((str, i) => {
+//     //     result += `${str}${values[i] || ''}`
+//     // });
+//     // return result
+
+//     return strings.reduce((result, str, i) => `${result}${str}${values[i] || ''}`, '')
+// }
+
+// const nama = 'Dzaky Ramadhani';
+// const umur = 20;
+
+// const str = highlight`Halo, nama saya ${nama}, umur saya ${umur} tahun`;
+
+// console.log(str);
+
+// function highlight(strings, ...values) {
+//     // let result = '';
+//     // strings.forEach((str, i) => {
+//     //     result += `${str}${values[i] || ''}`
+//     // });
+//     // return result
+
+//     return strings.reduce((result, str, i) => `${result}${str}<b>${values[i] || ''}</b>`, '')
+// }
+
+// document.body.innerHTML = str;
+
+// == DESTRUCTURING ASSIGNMENT ==
+
+// Desc array
+
+// const perkenalan = ['Halo', 'nama', 'saya', 'joko'];
+// const [salam, , , nama] = perkenalan;
+// console.log(nama)
+
+// swap items
+// let a = 1;
+// let b = 2;
+// console.log(a);
+// console.log(b);
+// [a, b] = [b, a]
+// console.log(a);
+// console.log(b)
+
+// return value pada function
+// function coba() {
+//     return[1, 2];
+// }
+
+// const [a, b] = coba();
+// console.log(b);
+
+// Rest parameter
+// const [a, ...values] = [1,2,3,4, 5, 6, 7]
+// console.log(a)
+// console.log(values)
+
+// Destructuring object
+// const mhs = {
+//     nama: 'Dzaky',
+//     umur: 33
+// }
+
+// const {nama, umur}= mhs
+// console.log(nama)
+
+// Assignment tanpa deklarasi object
+({nama, umur} = {nama: 'Dzaky', umur : 20});
+console.log(nama)
